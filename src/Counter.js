@@ -1,12 +1,14 @@
 import React from 'react';
+import { CounterCounter } from './CounterContainer';
 
-const Counter = ({ count, reset, decrement, increment }) => {
+const Counter = () => {
+  const counter = CounterCounter.useContainer();
   return (
     <>
-      Count: {count}
-      <button onClick={reset}>Reset</button>
-      <button onClick={decrement}>-</button>
-      <button onClick={increment}>+</button>
+      Count: {counter.count}
+      <button onClick={counter.reset}>Reset</button>
+      <button onClick={counter.decrement}>-</button>
+      <button onClick={counter.increment}>+</button>
     </>
   );
 };
